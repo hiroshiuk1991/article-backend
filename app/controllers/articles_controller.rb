@@ -12,6 +12,7 @@ end
 
 def create
     article = Article.create(article_params)
+    # render json: article
 end
 
 def update
@@ -22,7 +23,7 @@ end
 private
 
 def article_params
-    permit.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body)
 end 
 
 
