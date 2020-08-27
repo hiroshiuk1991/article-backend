@@ -6,17 +6,19 @@ def index
 end 
 
 def show 
-    article = Article.find(params([id]))
+    article = Article.find(params([:id]))
     render json: article
 end 
 
 def create
     article = Article.create(article_params)
-    # render json: article
+    render json: article
 end
 
 def update
     article = Article.find(params[:id])
+    article.update(article_params)
+    render json: article
 end 
 
 
